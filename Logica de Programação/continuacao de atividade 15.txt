@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        string[] vogais = { "a", "e", "i", "o", "u" };
+
+     
+        Console.Write("Informe um texto: ");
+        string texto = Console.ReadLine();
+
+        int contadorVogais = 0;
+
+     
+        foreach (char letra in texto)
+        {
+          
+            if (Array.Exists(vogais, vogal => vogal == letra.ToString()))
+            {
+                contadorVogais++;
+            }
+        }
+
+        
+        Console.WriteLine($"O texto contem {contadorVogais} vogal(is).");
+    }
+}

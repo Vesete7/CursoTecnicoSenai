@@ -1,0 +1,21 @@
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Digite uma letra: ");
+		string texto = Console.ReadLine();
+        char letra = Console.ReadKey().KeyChar;
+        letra = Char.ToLower(letra);
+
+        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
+        {
+            Console.WriteLine("\nA letra e uma vogal.", letra);
+        }
+        else
+        {
+            Console.WriteLine("\nA letra e uma consoante.", letra);
+        }
+       
+    }
+}

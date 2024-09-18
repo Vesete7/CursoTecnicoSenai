@@ -1,0 +1,45 @@
+
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Digite a distancia percorrida em metros: "); 
+        if (Double.TryParse(Console.ReadLine(), out double distancia))
+        {
+         Console.WriteLine("Escolha uma operacao (cm, km, milhas)");
+         string operacao = Console.ReadLine();
+         
+        double resultado = 0;
+         
+        switch (operacao)
+         {
+        case "cm":
+        resultado = distancia * 100;
+        Console.WriteLine("Resultado em centimetros e: " + resultado);
+        break;
+        
+        case "km":
+        resultado = distancia / 1000;
+        Console.WriteLine("Resultado em quilometros e: " + resultado);
+        break;
+        
+        case "milhas":
+        resultado = distancia * 0.000621371;
+        Console.WriteLine("Resultado em milhas e: " + resultado);
+        break;
+		
+		default: 
+		Console.WriteLine ("Operação Invalida");
+		break;
+         }
+         
+           
+         }
+         else
+         {
+              Console.WriteLine ("Valor Invalido");
+		
+	}
+}
+}

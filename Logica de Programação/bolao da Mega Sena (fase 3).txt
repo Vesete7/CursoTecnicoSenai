@@ -1,0 +1,37 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Random random = new Random();
+		Console.WriteLine("Digite a quantidade de jogos: ");
+		int quantidadeJogos = int.Parse(Console.ReadLine());
+		Console.WriteLine("Qual a quantidade de dezenas: ");
+		int quantidadedezenas = int.Parse(Console.ReadLine());
+		int dezena;
+		if (quantidadedezenas < 6)
+		{
+			Console.WriteLine("ERRO: Digite outro valor");
+		}
+		else
+		{
+			for (int j = 1; j <= quantidadeJogos; j++)
+			{
+				for (int i = 1; i <= quantidadedezenas; i++)
+				{
+					dezena = random.Next(1, 61);
+					if (i == quantidadedezenas)
+					{
+						Console.Write($"{dezena:D2}");
+					}
+					else
+					{
+						Console.Write($"{dezena:D2}-");
+					}
+				}
+
+				Console.WriteLine();
+			}
+		}
+	}

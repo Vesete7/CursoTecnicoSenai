@@ -1,0 +1,32 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string[] vogais = {"a", "e", "i", "o", "u"};
+         
+         Console.Write("Informar uma letra: ");
+         string texto = Console.ReadLine();
+         foreach (string vogal in vogais)
+        {
+        if (vogal == texto)
+           Console.WriteLine($"A letra '{vogal}' e vogal");   
+        } 
+        
+      
+        /*
+        char letra = Console.ReadKey().KeyChar;
+        letra = Char.ToLower(letra);
+
+        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
+        {
+            Console.WriteLine("\nA letra e uma vogal.", letra);
+        }
+        else
+        {
+            Console.WriteLine("\nA letra e uma consoante.", letra);
+        }
+        */
+    }
+}

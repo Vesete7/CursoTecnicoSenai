@@ -1,0 +1,38 @@
+
+
+public class Program
+{
+	public static void Main()
+	{
+		contador, valor, operacao;
+		
+		Console.WriteLine("Digite o valor desejado: ");
+		string texto = Console.ReadLine();
+		if (double.TryParse(texto, out valor)){
+		
+		Console.WriteLine("Escolha uma operacao (+, -, *, /): ");
+		string texto	
+		
+		int contador = 1;		
+			
+			switch (texto)	
+			{
+			case '+':
+			operacao = valor + contador;
+			Console.WriteLine($"{valor} + {contador} = {operacao}");
+			
+			
+			int contador = 1;		
+			}
+			
+			{
+				operacao = valor * contador;
+				Console.WriteLine($"{valor} X {contador} = {operacao}");
+			}
+		}
+		else
+		{
+			Console.WriteLine("O valor desejado não é valido");
+		}
+	}
+}

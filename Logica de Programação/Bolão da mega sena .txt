@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Random random = new Random();
+
+        Console.Write("Quantos jogos voce quer gerar? ");
+        int quantidadeJogos = int.Parse(Console.ReadLine());
+
+        for (int j = 0; j < quantidadeJogos; j++)
+        {
+            Console.Write("Jogo " + (j + 1) + ": ");
+            for (int i = 0; i < 6; i++)
+            {
+                Console.Write(random.Next(1, 61));
+
+                if (i < 5)
+                {
+                    Console.Write("-");
+                }
+            }
+            Console.WriteLine();
+        }
+    }
+}

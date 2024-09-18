@@ -1,0 +1,75 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+        Random random = new Random(); // cria uma instancia de classe random que gera os numeros
+        int quantidadeJogos; // Variavel que armazena a quantidade de jogos
+        int quantidadedezenas; // Variavel que armazena a quantidade de dezenas por jogo
+		double valorPremio; // Variavel que armazena o valor do premio
+		double resultado; // Variavel que armazena o resultado do calculo do premio
+
+		do
+		
+         Console.WriteLine("Digite o valor do prêmio: "); //Solicita o valor do premio
+         while (!double.TryParse(Console.ReadLine(), out valorPremio) || valorPremio <= 0);	 // Garante que seja um numero inteiro
+
+         //Solicita a quantidade de jogos e garante que seja inteiro
+		 Console.WriteLine("Digite a quantidade de jogos: ");  //Solicita a quantidade de jogos
+         while (!int.TryParse(Console.ReadLine(), out quantidadeJogos) || quantidadeJogos <= 0);  // Garante que seja um numero inteiro
+
+		do
+        {
+            Console.WriteLine("Qual a quantidade de dezenas: "); // Solicita a quantidade de dezenas 
+            if (!int.TryParse(Console.ReadLine(), out quantidadedezenas) || quantidadedezenas < 4 || quantidadedezenas > 6)
+            {
+               Console.WriteLine("ERRO: O valor de dezenas informados é invalido (deve ser entre 4 e 6)."); // Mensagem de erro  
+            }
+        } 
+			while (quantidadedezenas < 4 || quantidadedezenas > 6);
+		
+			 Console.WriteLine($"\nValor do prêmio: R$ {valorPremio:N2}\n"); //Exibe o valor do premio formatado
+
+      	 // Gera e exibe os números dos jogos
+        for (int j = 1; j <= quantidadeJogos; j++)
+        {
+            Console.Write($"Jogo {j}: ");
+            for (int i = 1; i <= quantidadedezenas; i++)
+            {
+                int dezena = random.Next(1, 61);  //Gera um número aleatório entre 1 e 60
+                Console.Write($"{dezena:D2}"); // Exibe o número com dois dígitos
+                if (i < quantidadedezenas) // Adiciona um separador entre as dezenas
+                {
+                    Console.Write("-"); // Adiciona um separador entre as dezenas
+                }
+            }
+            Console.WriteLine(); // Quebra de linha após exibir as dezenas de um jogo
+        }
+		    Console.WriteLine(); // Quebra de linha após exibir as dezenas de um jogo
+		
+
+		if (quantidadedezenas == 6)
+		{
+		resultado = valorPremio * 0.75;	// calcula o valor do premio
+		Console.WriteLine($"O valor do premio sera de: {Math.Round(resultado, 2)} reais ");  //exibe o valor do premio de acordo com o resultado do calculo 
+		}
+		// calcula e exibe o valor do premio de acordo com o valor fornecido
+		else if (quantidadedezenas == 5)
+		{
+		resultado = valorPremio * 0.15;	// calcula o valor do premio
+		Console.WriteLine($"O valor do premio sera de: {Math.Round(resultado, 2)} reais "); //exibe o valor do premio de acordo com o resultado do calculo
+        }
+		
+		else if 
+		(quantidadedezenas == 4)
+		{
+		resultado = valorPremio * 0.10;	// calcula o valor do premio
+		Console.WriteLine($"O valor do premio sera de: {Math.Round(resultado, 2)} reais "); //exibe o valor do premio de acordo com o resultado do calculo
+		}
+		 
+		
+       }
+}
+
